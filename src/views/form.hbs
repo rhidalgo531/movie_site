@@ -1,0 +1,34 @@
+<div id="content">
+<h1> Sample Form With Persisting Data </h1>
+
+<form action="/" method="POST">
+Pick a car: <select name="car">
+  <option value="Lexus"> Lexus
+  <option value="Audi"> Audi
+  <option value="Tesla"> Tesla
+  <option value="BMW"> BMW
+  <option value="Corvette"> Corvette
+  </select>
+<br>
+Enter a color: <input type="text" name="color" value="">
+<input type="submit" value="Submit">
+</form>
+
+<a href="/login"> Final Project Research Topic: Authentication </a>
+
+<br>
+{{#if data}}
+<table>
+  <th>
+    <td> Car </td>
+    <td> Color </td>
+  </th>
+  {{#each data}}
+  <tr>
+    <td> {{car}} </td>
+    <td> {{color}} </td>
+  </tr>
+  {{/each}}
+</table>
+{{/if}}
+</div>

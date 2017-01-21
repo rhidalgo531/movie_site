@@ -1,0 +1,118 @@
+
+<div class="profilecont">
+  <nav id="topNav">
+    <div id="settingsMenu">
+      <ul>
+          <li> <a href="/logout"> Logout <img class="icon" src="https://cdn0.iconfinder.com/data/icons/gradient-runded-glowing-icons/128/right.png" width="30px" height="30px"></a></li>
+          <li> <a href="/profile/{{username}}"> Profile <img class="icon" src="https://cdn0.iconfinder.com/data/icons/gradient-runded-glowing-icons/128/home.png" width="30px" height="30px"> </a></li>
+    </ul>
+  </div>
+  <br>
+    <div id="mainMenu">
+      <ul>
+        <li> <a href="/profile/{{username}}"> Welcome {{username}}  </a></li>
+        <li> <a href="/rate/{{username}}"> Rate Movies <img class="icon" src="https://cdn0.iconfinder.com/data/icons/gradient-runded-glowing-icons/128/heart.png"height="35px" width="35px"></a></li>
+        <li> <a href="/recommended/{{username}}"> Find Recommended Movies <img class="icon" src="https://cdn0.iconfinder.com/data/icons/gradient-runded-glowing-icons/128/star.png"height="35px" width="35px"> </a></li>
+        <li> <a href="/board/{{username}}"> Check All Users Board <img class="icon" src="https://cdn0.iconfinder.com/data/icons/gradient-runded-glowing-icons/128/star.png"height="35px" width="35px"> </a></li>
+      </ul>
+    </div>
+  </nav>
+
+    <aside class="following">
+      <h3> Following </h3><br>
+      {{#each user.following}}
+      <div class="followBlock"> <div class="contentSpace"><span class="followUsername"> Username: </span><span class="followName">{{this.username}}</span>
+      <br>{{#if this.avatar}} <img src="{{this.avatar}}" class="userAvatar"> {{else}} <img src="https://cdn4.iconfinder.com/data/icons/mayssam/512/user-128.png" class="userAvatar">{{/if}}
+    <br><div id="summary">Favorite Genre: {{this.favoriteGenre}} <br> Member Since: {{this.registeredDate}}</div></div></div><br>
+
+      {{/each}}
+    </aside>
+  <article id="profileMain">
+  <section id="profileHeader">
+    <img id="headerImg1" src="/images/moana.jpg" height="100%" width="100%">
+    <img id="headerImg2" src="/images/rogue1.jpg" height="100%" width="100%" hidden>
+    <img id="headerImg3" src="/images/ww.png" height="100%" width="100%" hidden>
+    <img id="headerImg4" src="/images/aCreed.jpg" height="100%" width="100%" hidden>
+</section>
+    <section id="profileContent">
+      <h2> User Info </h2>
+      <p> Last Movie Rated: {{user.lastMovieRated}} <br>
+        Total Movies Rated: {{tRatings}}
+      </p>
+      <div class="profHeader"><h2> Add Movies <button id="formButton"onclick="showForm();">▲</button></h2></div>
+      <div id="showForm">
+        <form action="/" method="POST" id="addForm">
+          Enter All Fields <br>
+          (Make Sure to Check if Movie Already Exists in Database)<br>
+          <label for="">Enter Movie Title</label><input class="valInput" type="text" name="movieTitle" value=""><br>
+          <label for="">Enter Movie Genre</label><input type="text" class="valInput" name="movieGenre" value=""><br>
+          <label for="">Enter Movie Director</label><input type="text" class="valInput" name="movieDirector" value=""><br>
+          <label for="">Provide Movie Image</label><input type="text" class="valInput" name="movieImageUrl" value=""><br>
+          <label for="">Provide Movie Year Released</label><input type="Number" class="valInput" name="movieYear" value=""><br>
+          <input type="submit" name="" value="Submit"><input type="reset" name="" value="Reset">
+        </form>
+        <div id="movieSubmitted" hidden>
+          <h2> Submitted! </h2>
+        </div>
+      </div>
+    </section>
+  </article>
+  <aside class="findM">
+    <h3> Find Movies </h3>
+    <label for="profileSearchCriteria" class="pscLabel">Single Search By</label><select class="profileSearchCriteria" name="profileSearchCriteria" id="profileSearchCriteria">
+    <option class="profSearch" value="title" selected>Title</option>
+    <option class="profSearch" value="year">Year</option>
+    <option class="profSearch" value="director">Director</option>
+    <option class="profSearch" value="genre">Genre</option>
+    <option class="profSearch" value="rating">Rating</option>
+  </select>
+  <input type="text" id="singleSearch" value="" placeholder="Enter Here">
+  <input type="submit" value="Search" id="ssSubmit">
+  <div id="singleSearchMovies">
+
+  </div>
+
+  <br>
+  </aside>
+</div>
+
+
+
+<script>
+var count = 1;
+rotate();
+function rotate() {
+    if (count > 4) {
+      count = 1;
+    }
+      var headerImg = "headerImg" + count;
+      for (var i = 1; i < 5; i ++) {
+        if (i === count) {
+          var headerImg = "headerImg" + count;
+          document.getElementById(headerImg).style.display = "inline-block";
+        } else {
+          var headerImg = "headerImg" + i;
+          document.getElementById(headerImg).style.display = "none";
+        }
+      }
+
+      count++;
+      setTimeout(rotate, 10000);
+}
+
+rotate.prototype.pause = function(){
+  this.pause = true;
+}
+rotate.prototype.continue = function() {
+  this.pause = false;
+}
+function showForm() {
+    if (document.getElementById("formButton").textContent == "▼") {
+      document.getElementById("showForm").style.display = "inline-block";
+      document.getElementById("formButton").textContent = "▲";
+    } else if (document.getElementById("formButton").innerHTML == "▲") {
+      document.getElementById("showForm").style.display = "none";
+      document.getElementById("formButton").textContent = "▼";
+    }
+}
+</script>

@@ -1,0 +1,385 @@
+html {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(50,50,50);
+  height: 100%;
+}
+body {
+  text-align: center;
+  font: 14px , 'Tahoma', Georgia, sans-serif;
+  z-index: 10;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.cont {
+  margin: 0;
+  overflow: auto;
+  position: relative;
+}
+
+.cont:before {
+  margin: 0;
+  content:"";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: -5;
+  display: block;
+  background-image: url(http://www.scan4you.nl/img/bg4.jpg);
+  background-size:cover;
+  width: 100vw;
+  height: 100vh;
+
+}
+
+
+div#content {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+  width: 50%;
+  z-index: 100;
+  background-color: #FFF;
+  height: 40%;
+  box-shadow: 0 0 2px 2px grey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  position: relative;
+  top: 50%;
+  min-width: 300px;
+  min-height: 500px;
+}
+
+#register {
+  color: green;
+  width: 180px;
+  height: 30px;
+  border-radius: 2px;
+  margin-top: 10px;
+}
+
+
+#login {
+  height: 90%;
+  z-index: 110;
+  background-color: inherit;
+  position: relative;
+  top: 40%;
+  width: 90%;
+  min-width: 200px;
+  min-height: 250px;
+}
+
+#login input {
+  box-shadow: inset 0 0 0 1px;
+}
+
+#login input:hover, #register:hover {
+  box-shadow: inset 0 0 0 1px #27496d,0 5px 5px;
+}
+
+#login input#username {
+  top: 10%;
+  width: 250px;
+  height: 30px;
+  background: transparent;
+  background-color: #193047;
+  border-radius: 2px;
+  color: white;
+  font-size: 16px;
+  padding: 4px;
+}
+
+#login input#password {
+  top: 10%;
+  width: 250px;
+  height: 30px;
+  background: transparent;
+  background-color: #193047;
+  border-radius: 2px;
+  color: white;
+  font-size: 16px;
+  padding: 4px;
+  margin-top: 10px;
+}
+
+#login input#age {
+  top: 10%;
+  width: 250px;
+  height: 30px;
+  background: transparent;
+  background-color: #193047;
+  border-radius: 2px;
+  color: white;
+  font-size: 16px;
+  padding: 4px;
+  margin-top: 10px;
+  margin-right: 13px;
+}
+
+#login select#favorite {
+  top: 10%;
+  width: 250px;
+  height: 30px;
+  background: transparent;
+  background-color: #193047;
+  border-radius: 2px;
+  color: white;
+  font-size: 16px;
+  padding: 4px;
+  margin-top: 10px;
+}
+
+#login input#submit {
+  top: 10%;
+  width: 260px;
+  height: 30px;
+  background: #C0C0C0;
+  border: 1px solid;
+  cursor: pointer;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 16px;
+  padding: 4px;
+  margin-top: 10px;
+  font-weight: 500;
+  color: #a18d6d;
+}
+
+#login input#password:hover, #login input#username:hover {
+  background-color: ivory;
+  color: black;
+  opacity: 0.5;
+}
+
+/***           --------- Profile ----------- **/
+.profilecont {
+  height: 100%;
+}
+
+nav {
+  background-color: black;
+  width: 100%;
+  height: 100px;
+  font: "Georgia";
+  font-size: 16px;
+  box-shadow: 2px white;
+}
+nav#topNav ul li {
+  z-index: 200;
+  padding: 10px;
+}
+
+nav#topNav #mainMenu ul li{
+  display: inline-block;
+  position: relative;
+  left: 5%;
+}
+
+nav#topNav #mainMenu {
+  color: rgb(88, 227, 140);
+  box-shadow: 0 0 10px white;
+}
+
+
+nav#topNav #settingsMenu ul li {
+  margin: 0;
+  float: right;
+  display: inline-block;
+  position: relative;
+  right: 5px;
+}
+
+nav#topNav #settingsMenu {
+  margin: 0;
+}
+
+nav#topNav #mainMenu ul li a {
+    text-decoration: none;
+    color: rgb(88, 227, 140);
+    font-weight:100;
+    font-size: 20px;
+}
+
+nav#topNav #mainMenu ul li a:hover {
+  color: rgb(188, 217, 140);
+}
+
+nav#topNav #settingsMenu ul li a {
+    text-decoration: none;
+    color: white;
+    position: relative;
+    bottom: 20px;
+}
+
+nav#topNav #settingsMenu ul li a:hover {
+  color: rgb(188, 217, 140);
+}
+
+.userAvatar {
+  margin-top: 10px;
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  background: #f2f6f8;
+background: -moz-linear-gradient(left, #f2f6f8 0%, #d8e1e7 50%, #b5c6d0 51%, #e0eff9 100%);
+background: -webkit-linear-gradient(left, #f2f6f8 0%,#d8e1e7 50%,#b5c6d0 51%,#e0eff9 100%);
+background: linear-gradient(to right, #f2f6f8 0%,#d8e1e7 50%,#b5c6d0 51%,#e0eff9 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f6f8', endColorstr='#e0eff9',GradientType=1 );
+}
+
+#summary {
+  color:  rgb(200, 200, 200);
+  font-size: .8em;
+}
+aside.following {
+  margin: 0;
+  padding: 0;
+  float: left;
+  height: 100%;
+  width: 20%;
+  background-color: white;
+  position: static;
+  margin-top: 3%;
+  overflow-y: scroll;
+  font-family: inherit;
+}
+
+aside.following .followBlock {
+  width: 70%;
+  height: 200px;
+  margin: auto;
+  background-color: grey;
+}
+article {
+  height: 100%;
+}
+
+article#profileMain {
+  float: left;
+  width: 60%;
+  height: 100%;
+  position: static;
+  margin-top: 3%;
+  box-shadow: 0 0 0 2px rgb(50, 50, 50);
+}
+
+#usernameTitle {
+  color:  rgb(08, 147, 20);
+  font: inherit;
+}
+
+section#profileHeader {
+  width: 100%;
+  height: 400px;
+  background-color: black;
+  margin: 0;
+  padding: 0;
+}
+
+aside.findM {
+  width: 20%;
+  margin: 0;
+  background-color: white;
+  height: 100%;
+  min-height: 100vh;
+  overflow-y: scroll;
+  position: static;
+  margin-top: 3%;
+  left: 80%;
+  font-family: inherit;
+}
+
+section#profileContent {
+  margin-top: 0;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  background-color: #FFF;
+  height: 100%;
+}
+
+.profHeader {
+  background-color: rgb(50,50,50);
+  color: white;
+}
+
+.icon {
+  border-bottom-style: groove;
+}
+
+/**          ----------------- All Users Board ------------ **/
+.allUsersContent {
+    color: black;
+    width: 100%;
+    background-color: black;
+    overflow-y: scroll;
+}
+
+#usersBackground {
+  width: 100%;
+  margin: auto;
+  position: relative;
+  background-color: white;
+  z-index: 200;
+}
+#lastMovie {
+  display: inline-block;
+}
+
+.usersBoard {
+  width: 50%;
+  margin: auto;
+}
+
+.name {
+  padding-top: 10px;
+}
+
+.addButton:hover {
+  opacity: 1.5;
+  box-shadow: 0 0 0 10px green;
+}
+
+.contentSpace {
+  padding-top: 20px;
+}
+
+span.followUsername {
+  color: rgb(200, 200, 200);
+}
+
+span.followUsername:hover {
+  color: rgb(100, 100, 200);
+}
+
+span.followName {
+  color: rgb(88, 227, 140);
+}
+
+.pscLabel {
+  display: block;
+}
+.profileSearchCriteria {
+  width: 45%;
+  font-size: 16px;
+  display: inline-block;
+  margin: auto;
+}
+
+#singleSearch {
+  display: inline-block;
+  width: 45%;
+  border-radius: 5px;
+  background-color: transparent;
+}
+
+#singleSearchMovies img {
+  width: 100%;
+  height: 200px;
+}

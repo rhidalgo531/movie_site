@@ -1,0 +1,107 @@
+<nav id="topNav">
+  <div id="settingsMenu">
+    <ul>
+        <li> <a href="/logout"> Logout <img class="icon" src="https://cdn0.iconfinder.com/data/icons/gradient-runded-glowing-icons/128/right.png" width="30px" height="30px"></a></li>
+        <li> <a href="/profile/{{username}}"> Profile <img class="icon" src="https://cdn0.iconfinder.com/data/icons/gradient-runded-glowing-icons/128/home.png" width="30px" height="30px"> </a></li>
+  </ul>
+</div>
+<br>
+  <div id="mainMenu">
+    <ul>
+      <li id="username"> <a href="/profile/{{username}}">{{username}}</a></li>
+      <li> <a href="/rate/{{username}}"> Rate Movies <img class="icon" src="https://cdn0.iconfinder.com/data/icons/gradient-runded-glowing-icons/128/heart.png"height="35px" width="35px"></a></li>
+      <li> <a href="/recommended/{{username}}"> Find Recommended Movies <img class="icon" src="https://cdn0.iconfinder.com/data/icons/gradient-runded-glowing-icons/128/star.png"height="35px" width="35px"> </a></li>
+      <li> <a href="/board/{{username}}"> Check All Users Board <img class="icon" src="https://cdn0.iconfinder.com/data/icons/gradient-runded-glowing-icons/128/star.png"height="35px" width="35px"> </a></li>
+    </ul>
+  </div>
+</nav>
+<div id="rateContent">
+  <div id="cont">
+    <h1> Rate Movies </h1>
+    <div id="rating">
+    <span id="movieTitle" value="{{movie.title}}">{{movie.title}}</span> <br>
+      <img src="{{movie.imageUrl}}" width="300px" height="350px">
+      <a href="/rate/{{username}}"><img id="arrow" src="/images/arrow.png"></a>
+      <div class="starsArea">
+        <a class="stars" href="#" id="5">&#x2606;</a>  <a class="stars" href="#" id="4">&#x2606;</a>
+        <a class="stars"href="#" id="3">&#x2606;</a>  <a class="stars"href="#" id="2">&#x2606;</a><a class="stars"href="#" id="1">&#x2606;</a>
+    </div>
+  </div>
+  <div id="avg">
+    Average Rating: {{avgRating}}/5 ({{submissions}})
+  </div>
+  <div id="submitted" hidden>
+    Submitted!
+  </div>
+</div>
+
+<style>
+/* ------------------ Rate Movies -------------------- */
+
+#rateContent {
+  width: 100%;
+  background-color: white;
+  height: 100%;
+  margin: auto;
+}
+
+#rateContent #cont {
+  height: 100%;
+  min-height: 100vh;
+  width: 70%;
+  margin: auto;
+  background-color: silver;
+
+}
+
+.starsArea {
+  margin: auto;
+  width: 12%;
+  direction: rtl;
+  text-align: center;
+}
+
+.starsArea a {
+  margin: 2px;
+  color: green;
+  font-size: 1em;
+  display: inline-block;
+  position: relative;
+  width: 1em;
+  text-decoration: none;
+}
+
+.starsArea .stars:hover, .starsArea .stars:hover ~a {
+  color: transparent;
+}
+
+.starsArea .stars:hover:before,  .starsArea .stars:hover ~a:before {
+  font-size: 1.5em;
+  content: "\2605";
+  position: absolute;
+  left: 0;
+  color: green;
+  margin-top: -25%;
+  margin-left: -10%;
+  cursor: progress;
+}
+
+#movieTitle {
+  font-size: 2em;
+  color: rgb(50, 50, 100);
+}
+
+#arrow {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  bottom: 40%;
+  z-index: 200;
+  color: transparent;
+}
+
+#arrow:hover {
+  box-shadow: 2px 0 0 0 green;
+  color: green;
+}
+</style>

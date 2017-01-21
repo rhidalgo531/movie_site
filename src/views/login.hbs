@@ -1,0 +1,22 @@
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> 69110ab2f84aced7d75e4c1d07254bae6d6d52b1
+<div class="cont">
+<div id="content">
+<h1> Login Page </h1>
+<div id="login">
+<form method="POST" action="/login">
+  <input type="text" name="username" placeholder="Username"  id="username" autofocus required><br>
+  <input type="text" name="password" placeholder="Password" id="password" required><br>
+  <input type="submit" value="Login" id="submit">
+</form><br>
+<br><button onclick="window.location.href='/signup'"  id="register"> Register Now</button></div>
+<a href="/login/facebook"> <img src="https://i.stack.imgur.com/ZW4QC.png" </img></a>
+
+{{#if message}}
+<p> {{message}} </p>
+{{/if}}
+</div>
+</div>

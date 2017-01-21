@@ -1,0 +1,55 @@
+<div class="recommendedContent">
+  <div id="fill"></div>
+  <nav id="topNav">
+  <div id="settingsMenu">
+    <ul>
+        <li> <a href="/logout"> Logout <img class="icon" src="https://cdn0.iconfinder.com/data/icons/gradient-runded-glowing-icons/128/right.png" width="30px" height="30px"></a></li>
+        <li> <a href="/profile/{{username}}"> Profile <img class="icon" src="https://cdn0.iconfinder.com/data/icons/gradient-runded-glowing-icons/128/home.png" width="30px" height="30px"> </a></li>
+  </ul>
+</div>
+<br>
+  <div id="mainMenu">
+    <ul>
+      <li id="username" name={{username}}> <a href="/profile/{{username}}">{{username}}</a> </li>
+      <li> <a href="/rate/{{username}}"> Rate Movies <img class="icon" src="https://cdn0.iconfinder.com/data/icons/gradient-runded-glowing-icons/128/heart.png"height="35px" width="35px"></a></li>
+      <li> <a href="/recommended/{{username}}"> Find Recommended Movies <img class="icon" src="https://cdn0.iconfinder.com/data/icons/gradient-runded-glowing-icons/128/star.png"height="35px" width="35px"> </a></li>
+      <li> <a href="/board/{{username}}"> Check Users Board <img class="icon" src="https://cdn0.iconfinder.com/data/icons/gradient-runded-glowing-icons/128/star.png"height="35px" width="35px"> </a></li>
+    </ul>
+  </div>
+</nav>
+<section id="sectionContainer">
+<h3> Hello  {{username}}</h3>
+<h4> Here is Your Current User Resemblance Score: {{zscore}} </h4>
+<h4> Movie: {{movie.title}} </h4>
+<img class="zImages" src="{{movie.imageUrl}}">
+<p> Rate More Movies to Update Scores </p>
+</section>
+</div>
+
+<style>
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.recommendedContent {
+  height: 100%;
+}
+
+#sectionContainer {
+  height: 100%;
+  width: 70%;
+  margin: auto;
+  background-color: white;
+  opacity: 0.8
+}
+
+.zImages {
+    box-shadow: 0 0 5px 5px red;
+    width: 50%;
+    height: 50%;
+    max-height: 500px;
+    max-width: 500px; 	
+}
+</style>

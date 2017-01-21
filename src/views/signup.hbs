@@ -1,0 +1,74 @@
+<div class="cont">
+<div id="content">
+<h1> Register Page </h1>
+<div id="login">
+<form method="POST" action="/signup">
+  <input type="text" name="username" placeholder="Username" id="username" required>
+  <input type="text" name="password" placeholder="Password" id="password" required>
+  <input type="number" name="age" placeholder="Age" id="age" required>
+  <select class="" name="favorite" id="favorite">
+    <option value="" selected>--Select Favorite Genre</option>
+    <option value="Action">Action</option>
+    <option value="Adventure">Adventure</option>
+    <option value="Animation">Animation</option>
+    <option value="Biography">Biography</option>
+    <option value="Comedy">Comedy</option>
+    <option value="Crime">Crime</option>
+    <option value="Documentary">Documentary</option>
+    <option value="Drama">Drama</option>
+    <option value="Family">Family</option>
+    <option value="Fantasy">Fantasy</option>
+    <option value="History">History</option>
+    <option value="Horror">Horror</option>
+    <option value="Music">Music</option>
+    <option value="Mystery">Mystery</option>
+    <option value="Romance">Romance</option>
+    <option value="Sci-Fi">Sci-Fi</option>
+    <option value="Sport">Sport</option>
+    <option value="Thriller">Thriller</option>
+    <option value="War">War</option>
+    <option value="Western">Western</option>
+  </select>
+  <h3> Select Profile Icon </h3>
+  <div>
+    <img class="icon" src="/images/avi1.png" id="avi1.png"><img class="icon" src="/images/avi2.png" id="avi2.png"><img class="icon" src="/images/avi3.png" id="avi3.png"><br>
+    <img class="icon" src="/images/avi4.png" id="avi4.png"><img class="icon" src="/images/avi5.jpg" id="avi5.jpg"><img class="icon" src="/images/avi6.png" id="avi6.png">
+  </div>
+  <input type="text" value="" id="image" name="image" hidden>
+  <input type="submit" value="Login" id="submit">
+  <div id="message"> {{#if message}} {{message}}{{/if}} </div>
+</form>
+</div>
+{{#if message}}
+<div> {{message}} </div>
+{{/if}}
+</div>
+</div>
+
+<style>
+div img {
+  width: 50px;
+  height: 50px;
+  margin: auto;
+  cursor: pointer;
+}
+
+.icon { transition: all .2s ease-in-out; }
+.icon:hover { transform: scale(1.25); }
+
+#message {
+  position: relative;
+  top: 50px;
+  color: red;
+  font-size: 1.5em;
+}
+</style>
+<script>
+var icons = document.getElementsByClassName("icon");
+for (var i = 0; i < icons.length; i++) {
+  icons[i].addEventListener("click", function(event) {
+    document.getElementById("image").value = this.id;
+    this.style.transform = "scale(1.25)";
+  });
+}
+</script>
